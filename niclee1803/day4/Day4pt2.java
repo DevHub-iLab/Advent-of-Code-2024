@@ -5,45 +5,36 @@ public class Day4pt2 {
         // Center must be 'A'
         if (grid[i][j] != 'A') return false;
 
-
         // M - S
         // - A -
         // M - S
-        if (i > 0 && j > 0 && i < grid.length - 1 && j < grid[0].length - 1) {
-            if (grid[i-1][j-1] == 'M' && grid[i+1][j+1] == 'S' &&
-                    grid[i-1][j+1] == 'S' && grid[i+1][j-1] == 'M') {
-                return true;
-            }
+        if (grid[i-1][j-1] == 'M' && grid[i+1][j+1] == 'S' &&
+                grid[i-1][j+1] == 'S' && grid[i+1][j-1] == 'M') {
+            return true;
         }
 
         // S - S
         // - A -
         // M - M
-        if (i > 0 && j < grid[0].length - 1 && i < grid.length - 1 && j > 0) {
-            if (grid[i-1][j-1] == 'S' && grid[i+1][j+1] == 'M' &&
-                    grid[i-1][j+1] == 'S' && grid[i+1][j-1] == 'M') {
-                return true;
-            }
+        if (grid[i-1][j-1] == 'S' && grid[i+1][j+1] == 'M' &&
+                grid[i-1][j+1] == 'S' && grid[i+1][j-1] == 'M') {
+            return true;
         }
 
         // M - M
         // - A -
         // S - S
-        if (i < grid.length - 1 && j < grid[0].length - 1 && i > 0 && j > 0) {
-            if (grid[i-1][j-1] == 'M' && grid[i+1][j+1] == 'S' &&
-                    grid[i-1][j+1] == 'M' && grid[i+1][j-1] == 'S') {
-                return true;
-            }
+        if (grid[i-1][j-1] == 'M' && grid[i+1][j+1] == 'S' &&
+                grid[i-1][j+1] == 'M' && grid[i+1][j-1] == 'S') {
+            return true;
         }
 
         // S - M
         // - A -
         // s - M
-        if (i < grid.length - 1 && j > 0 && i > 0 && j < grid[0].length - 1) {
-            if (grid[i-1][j-1] == 'S' && grid[i+1][j+1] == 'M' &&
-                    grid[i-1][j+1] == 'M' && grid[i+1][j-1] == 'S') {
-                return true;
-            }
+        if (grid[i-1][j-1] == 'S' && grid[i+1][j+1] == 'M' &&
+                grid[i-1][j+1] == 'M' && grid[i+1][j-1] == 'S') {
+            return true;
         }
 
         return false;
