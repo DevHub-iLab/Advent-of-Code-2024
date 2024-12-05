@@ -18,7 +18,7 @@ for rule in rules:
 updates = inputParts[1].split("\n")
 updates = [update.split(",") for update in updates]
 
-# Create a comparsion function based on the order.
+# Create a comparison function based on the order.
 # For each key, the entries of order[key] must come AFTER key in the list.
 # comp(x,y) = -1, x must go before y
 # comp(x,y) = 0 if there is no order
