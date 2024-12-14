@@ -33,6 +33,7 @@ def parse(line):
 robots = [parse(line) for line in input.split("\n")]
 # print(robots)
 
+### Part 1
 def move(robot, steps):
     pos = robot[0]
     vel = robot[1]
@@ -66,7 +67,7 @@ for factor in quardrants:
     product *= factor
 print(product)
 
-
+### Part 2 - I opted to use the largest connected region as a heuristic to find the christmas tree
 def find_largest_connected_region(robots_pos):
     visited = set()
     largest_connected_region = 0
