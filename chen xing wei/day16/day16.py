@@ -12,7 +12,7 @@ for y, i in enumerate(file):
             end = (y, x)
 
 
-def dijktra(): #algo that will move to every location and find its min cost relative to starting pt(Usually used on weighted graphs)
+def dijkstra(): #algo that will move to every location and find its min cost relative to starting pt(Usually used for weighted graphs)
     state = (start[0], start[1], 3) #Data stored in state are the position and the direction. 3 as its index for East
     pq = [] #list used for priority queue
     heapq.heappush(pq, (0, state)) #list, (cost, data)
@@ -42,7 +42,7 @@ def dijktra(): #algo that will move to every location and find its min cost rela
     return visited
 
 
-visited = dijktra()
+visited = dijkstra()
 ans = float('inf')
 for i in range(4): #checking which direction has best cost
     if((end[0], end[1], i) in visited):
