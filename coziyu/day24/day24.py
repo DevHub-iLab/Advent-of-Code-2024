@@ -212,7 +212,18 @@ print(expected_z)
 print(binary_z)
 bit_diff(expected_z, binary_z)
     
-# By inspection
+# By inspection, the following gate outputs are swapped:
+# x15 xor y15 -> jgt
+# x15 and y15 -> mht
+# --
+# dpr and nvv -> z30
+# dpr xor nvv -> nbf
+# --
+# tsw xor wwm -> hdt 
+# rnk or  mkq -> z05 
+# --
+# x09 and y09 -> z09 
+# vkd xor wqr -> gbf 
 swapped_wires = ["jgt", "mht", "z30", "nbf", "hdt", "z05", "z09", "gbf"]
 
 print(",".join(sorted(swapped_wires)))
